@@ -1,0 +1,8 @@
+name: RestrictionMaster
+version: '0.1'
+main: pl.olafcio.restrictionmaster.RestrictionMaster
+api-version: '1.20'
+load: STARTUP
+authors: [ Olafcio ]
+description: Restricts certain features players shouldn't be able to use.
+website: https://olafcio1.github.io

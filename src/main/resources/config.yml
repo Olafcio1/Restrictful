@@ -1,0 +1,37 @@
+# RestrictionMaster
+# - made by Olafcio
+#
+# Links:
+# > https://modrinth.com/plugin/restrictionmaster
+# > https://github.com/Olafcio1/RestrictionMaster
+
+entity-spawn:
+  mode: WHITELIST
+  whitelist:
+    - player
+  blacklist:
+    - tnt
+    - tnt_minecart
+    - wither
+    - ender_dragon
+    - bee
+    - armor_stand
+
+block-place:
+  mode: BLACKLIST
+  whitelist: []
+  blacklist:
+    - tnt
+    - wither_head
+
+entity-interact:
+  mode: BLACKLIST
+  whitelist: []
+  blacklist:
+    - end_crystal
+
+item-use:
+  mode: BLACKLIST
+  whitelist: []
+  blacklist:
+    - flint_and_steel
