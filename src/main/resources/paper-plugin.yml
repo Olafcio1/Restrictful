@@ -4,5 +4,5 @@ main: pl.olafcio.restrictionmaster.RestrictionMaster
 api-version: '1.20'
 load: STARTUP
 authors: [ Olafcio ]
-description: Restricts certain features players shouldn't be able to use.
+description: Restricts certain features for creative servers.
 website: https://olafcio1.github.io

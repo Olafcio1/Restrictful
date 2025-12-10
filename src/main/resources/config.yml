@@ -9,6 +9,8 @@ entity-spawn:
   mode: WHITELIST
   whitelist:
     - player
+    - item
+    - falling_block
   blacklist:
     - tnt
     - tnt_minecart

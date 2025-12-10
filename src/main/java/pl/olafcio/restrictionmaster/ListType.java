@@ -3,12 +3,15 @@ package pl.olafcio.restrictionmaster;
 import org.jetbrains.annotations.Contract;
 
 public enum ListType {
-    WHITE("whitelist"),
-    BLACK("blacklist");
+    WHITE("whitelist", false),
+    BLACK("blacklist", true);
 
     public final String id;
-    ListType(String id) {
+    public final boolean cancel;
+
+    ListType(String id, boolean cancel) {
         this.id = id;
+        this.cancel = cancel;
     }
 
     public static class ValueNotFoundError extends RuntimeException {
