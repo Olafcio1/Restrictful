@@ -64,5 +64,13 @@
             <version>1.21-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>pl.olafcio</groupId>
+            <artifactId>protocolextension</artifactId>
+            <version>5</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/protocolextension-5-api.jar</systemPath>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 </project>

@@ -18,7 +18,6 @@ public enum ListType {
         private ValueNotFoundError() {
             super("ListType[WHITE, BLACK] cannot match null");
         }
-
         private ValueNotFoundError(String value) {
             super("ListType[WHITE, BLACK] cannot match '" + value + "'");
         }
