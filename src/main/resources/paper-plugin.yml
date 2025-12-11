@@ -1,6 +1,6 @@
-name: RestrictionMaster
+name: Restrictful
 version: '0.1'
-main: pl.olafcio.restrictionmaster.RestrictionMaster
+main: pl.olafcio.restrictful.Restrictful
 api-version: '1.21'
 load: STARTUP
 authors: [ Olafcio ]

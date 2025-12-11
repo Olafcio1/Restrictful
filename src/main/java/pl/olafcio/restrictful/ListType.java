@@ -1,4 +1,4 @@
-package pl.olafcio.restrictionmaster;
+package pl.olafcio.restrictful;
 
 import org.jetbrains.annotations.Contract;
 

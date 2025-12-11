@@ -1,4 +1,4 @@
-package pl.olafcio.restrictionmaster;
+package pl.olafcio.restrictful;
 
 import io.papermc.paper.command.brigadier.Commands;
 import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
@@ -18,7 +18,7 @@ import java.util.List;
 
 import static com.mojang.brigadier.Command.SINGLE_SUCCESS;
 
-public final class RestrictionMaster extends JavaPlugin implements Listener {
+public final class Restrictful extends JavaPlugin implements Listener {
     private FileConfiguration config;
 
     private ListType         entitySpawnMode;
@@ -44,9 +44,9 @@ public final class RestrictionMaster extends JavaPlugin implements Listener {
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
         getLifecycleManager().registerEventHandler(LifecycleEvents.COMMANDS, commands -> {
-            var mainCommand = Commands.literal("restrictionmanager")
+            var mainCommand = Commands.literal("restrictful")
                     .then(Commands.literal("reload")
-                            .requires(src -> src.getSender().hasPermission("restrictionmanager.reload"))
+                            .requires(src -> src.getSender().hasPermission("restrictful.reload"))
                             .executes(ctx -> {
                                 var now = System.currentTimeMillis();
 
@@ -54,7 +54,7 @@ public final class RestrictionMaster extends JavaPlugin implements Listener {
                                 config = getConfig();
 
                                 ctx.getSource().getSender().sendMessage(
-                                        "§3[RestrictionManager]§7 " +
+                                        "§3[Restrictful]§7 " +
                                         "Reloaded the configuration in " +
                                         "§2" + (System.currentTimeMillis() - now) + "ms§7."
                                 );
@@ -63,7 +63,7 @@ public final class RestrictionMaster extends JavaPlugin implements Listener {
                             })
                     )
                     .executes(ctx -> {
-                        ctx.getSource().getSender().sendMessage("§3[RestrictionManager]§7 Made by §2Olafcio§7 with §4❤");
+                        ctx.getSource().getSender().sendMessage("§3[Restrictful]§7 Made by §2Olafcio§7 with §4❤");
                         return SINGLE_SUCCESS;
                     })
             .build();
