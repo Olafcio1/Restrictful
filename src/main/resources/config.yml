@@ -1,9 +1,9 @@
-# RestrictionMaster
+# Restrictful
 # - made by Olafcio
 #
 # Links:
-# > https://modrinth.com/plugin/restrictionmaster
-# > https://github.com/Olafcio1/RestrictionMaster
+# > https://modrinth.com/plugin/restrictful
+# > https://github.com/Olafcio1/Restrictful
 
 entity-spawn:
   mode: WHITELIST
