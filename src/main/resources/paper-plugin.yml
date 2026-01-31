@@ -1,8 +1,10 @@
 name: Restrictful
-version: '0.1'
+version: '1.0'
 main: pl.olafcio.restrictful.Restrictful
 api-version: '1.21'
 load: STARTUP
 authors: [ Olafcio ]
 description: Restricts certain features for creative servers.
 website: https://olafcio1.github.io
+softdepend:
+  - ProtocolExtension
