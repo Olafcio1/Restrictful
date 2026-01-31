@@ -37,3 +37,9 @@ item-use:
   whitelist: []
   blacklist:
     - flint_and_steel
+
+creative-get:
+  mode: BLACKLIST
+  whitelist: []
+  blacklist:
+    - barrier

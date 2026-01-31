@@ -10,6 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityInteractEvent;
 import org.bukkit.event.entity.EntitySpawnEvent;
+import org.bukkit.event.inventory.InventoryCreativeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -32,6 +33,9 @@ public final class Restrictful extends JavaPlugin implements Listener {
 
     private ListType       itemUseMode;
     private List<Material> itemUseValues;
+
+    private ListType       creativeGetMode;
+    private List<Material> creativeGetValues;
 
     @Override
     public void onLoad() {
@@ -90,6 +94,13 @@ public final class Restrictful extends JavaPlugin implements Listener {
                         .map(String::toUpperCase)
                         .map(Material::getMaterial)
                 .toList();
+
+        creativeGetMode = ListType.of(config.getString("creative-get.mode"));
+        creativeGetValues = config.getStringList("creative-get." + itemUseMode.id)
+                .stream()
+                        .map(String::toUpperCase)
+                        .map(Material::getMaterial)
+                .toList();
     }
 
 
@@ -125,6 +136,13 @@ public final class Restrictful extends JavaPlugin implements Listener {
 
         var itemType = item.getType();
         if (itemUseValues.contains(itemType) == itemUseMode.cancel)
+            event.setCancelled(true);
+    }
+
+    @EventHandler
+    public void onInventoryCreative(InventoryCreativeEvent event) {
+        var stack = event.getCursor();
+        if (creativeGetValues.contains(stack.getType()) == creativeGetMode.cancel)
             event.setCancelled(true);
     }
 }
